@@ -1,0 +1,49 @@
+include  ../../admin/index
+// Content Wrapper. Contains page content
+.content-wrapper
+    // Content Header (Page header)
+    section.content-header
+        h1
+            | Data Alamat
+        ol.breadcrumb
+            li
+                a(href='#')
+                    i.fa.fa-dashboard
+                    |  Home
+            li
+                a(href='#') Tables
+            li.active Data tables
+    // Main content
+    section.content
+        .row
+            .col-xs-12
+                // /.box-body
+                // /.box
+                .box
+                    .box-body
+                        .box.box-info
+                            .box-header.with-border
+                                h3.box-title Input data alamat
+                            // /.box-header
+                            // form start
+                            form.form-horizontal(method="POST", action='/' + alamats._id + '/editalamat')
+                                .box-body
+                                    .form-group
+                                        label.col-sm-2.control-label(for='kodealamat') Kode Alamat
+                                        .col-sm-10
+                                            input#kodealamat.form-control(type='text' name="kodealamat" placeholder='Kode Alamat' value= (kodealamat == undefined) ? alamats.kodealamat : kodealamat)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='namarestoran') Nama Restoran
+                                        .col-sm-10
+                                            input#namarestoran.form-control(type='text' name="namarestoran" placeholder='Nama Restoran' value= (namarestoran == undefined) ? alamats.namarestoran : namarestoran)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='alamat') Alamat
+                                        .col-sm-10
+                                            input#alamat.form-control(type='text' name="alamat" placeholder='Alamat' value= (alamat == undefined) ? alamats.alamat : alamat)
+                                    .form-group
+
+
+                                // /.box-body
+                                .box-footer
+                                    button.btn.btn-info.pull-right(type='submit') Input Data
+                                // /.box-footer

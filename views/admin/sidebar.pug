@@ -1,0 +1,75 @@
+aside.main-sidebar
+    // sidebar: style can be found in sidebar.less
+    section.sidebar
+        // Sidebar user panel
+        .user-panel
+            .pull-left.image
+                img.img-circle(src='/adminlte/dist/img/photo2.png' alt='User Image')
+            .pull-left.info
+                p #{session_store.username}
+                a(href='#')
+
+                    i.fa.fa-circle.text-success
+                    |  Online
+        ul.sidebar-menu(data-widget='tree')
+            li.header MAIN NAVIGATION
+                li.treeview
+                    a(href='/')
+                        i.fa.fa-dashboard
+                        span Dashboard
+                if(session_store.admin == true)
+                    li.treeview
+                        a(href='#')
+                            i.fa.fa-laptop
+                            span Data Restoran
+                            span.pull-right-container
+                                i.fa.fa-angle-left.pull-right
+                        ul.treeview-menu
+                            li
+                                a(href='/inputmakanan')
+                                    i.fa.fa-circle-o
+                                    |  Input Data Makanan
+                            li
+                                a(href='/datamakanan')
+                                    i.fa.fa-circle-o
+                                    |  Lihat Data Makanan
+                    li.treeview
+                        a(href='#')
+                            i.fa.fa-laptop
+                            span Data Alamat
+                            span.pull-right-container
+                                i.fa.fa-angle-left.pull-right
+                        ul.treeview-menu
+                            li
+                                a(href='/inputalamat')
+                                    i.fa.fa-circle-o
+                                    |  Input Data Alamat
+                            li
+                                a(href='/dataalamat')
+                                    i.fa.fa-circle-o
+                                    |  Lihat Data Alamat
+                else
+                    li.treeview
+                        a(href='#')
+                            i.fa.fa-laptop
+                            span Data Makanan
+                            span.pull-right-container
+                                i.fa.fa-angle-left.pull-right
+                        ul.treeview-menu
+                            li
+                                a(href='/datamakananmember')
+                                    i.fa.fa-circle-o
+                                    |  Lihat Data Makanan
+                    li.treeview
+                        a(href='#')
+                            i.fa.fa-laptop
+                            span Data Alamat
+                            span.pull-right-container
+                                i.fa.fa-angle-left.pull-right
+                        ul.treeview-menu
+                            li
+                                a(href='/dataalamatmember')
+                                    i.fa.fa-circle-o
+                                    |  Lihat Data Alamat
+
+    // /.sidebar
